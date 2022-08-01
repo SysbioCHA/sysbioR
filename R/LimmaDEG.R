@@ -33,7 +33,7 @@ LimmaDEG <- function(motherMatrix  , case, control){
   colnames(design) <- levels(HT_group)
 
   fit <- lmFit(HT, design)
-  constrast.matrix<-makeContrasts(  sprintf("%s - %s", y, z), levels=HT_group)
+  constrast.matrix<-makeContrasts(contrasts = sprintf("%s - %s", y, z), levels=HT_group)
   fit.cont<-contrasts.fit(fit,constrast.matrix)
   efit<- eBayes(fit.cont)
   result<-topTable(efit, n=nrow(efit))
