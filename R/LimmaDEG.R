@@ -37,7 +37,6 @@ LimmaDEG <- function(motherMatrix  , case, control){
   fit.cont<-contrasts.fit(fit,constrast.matrix)
   efit<- eBayes(fit.cont)
   result<-topTable(efit, n=nrow(efit))
-
   DEGs <- result
   DEGs[, 'id'] <- rownames(DEGs)
   return(DEGs)
