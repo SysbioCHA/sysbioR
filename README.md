@@ -20,7 +20,8 @@ knitr::opts_chunk$set(
 
 The goal of sysbioR is to ...
 
-Ref links:
+
+## Ref links:
 1. Researchgate.net/publication/263130918_Stabilization_of_VEGF_G-quadruplex_and_Inhibition_of_Angiogenesis_by_quindoline_Derivatives
 2. https://post.naver.com/viewer/postView.nhn?volumeNo=29683946&memberNo=2534901
 
