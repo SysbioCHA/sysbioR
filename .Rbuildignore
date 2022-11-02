@@ -4,3 +4,4 @@
 README.md
 .Rhistory
 ^README\.Rmd$
+^LICENSE\.md$

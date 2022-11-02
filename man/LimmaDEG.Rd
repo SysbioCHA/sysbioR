@@ -4,12 +4,18 @@
 \alias{LimmaDEG}
 \title{DEG analaysis using Limma}
 \usage{
-LimmaDEG(mat, anno)
+LimmaDEG(motherMatrix, case, control)
 }
 \arguments{
-\item{mat}{matrix}
+\item{motherMatrix}{row name should be probe or gene and col name should be sample names.
+mothermatrix colnames: treat_A, treat_B, treat_C, no_treat_A, no_treat_B, no_treat_C}
 
-\item{anno}{annotation dataframe}
+\item{case}{pattern of case samples}
+
+\item{control}{pattern of control samples}
+}
+\value{
+res DEG results.
 }
 \description{
 This function performs DEG analysis using

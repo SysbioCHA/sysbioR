@@ -3,14 +3,19 @@
 #' This function performs DEG analysis using
 #'
 #' @param motherMatrix row name should be probe or gene and col name should be sample names.
+#' mothermatrix colnames: treat_A, treat_B, treat_C, no_treat_A, no_treat_B, no_treat_C
 #' @param case pattern of case samples
 #' @param control pattern of control samples
 #' @return res DEG results.
 #' @examples
-#' mothermatrix colnames: treat_A, treat_B, treat_C, no_treat_A, no_treat_B, no_treat_C
-#' LimmaDEG(mat, "treat", "no_treat")
+#' @import limma
+#' @import dplyr
+#' @importFrom stats model.matrix
 #' @export
-LimmaDEG <- function(motherMatrix  , case, control){
+#'
+#'
+#'
+LimmaDEG <- function(motherMatrix, case, control){
   x = motherMatrix
   y = case
   z = control
@@ -36,7 +41,7 @@ LimmaDEG <- function(motherMatrix  , case, control){
   constrast.matrix<-makeContrasts(contrasts = sprintf("%s - %s", y, z), levels=HT_group)
   fit.cont<-contrasts.fit(fit,constrast.matrix)
   efit<- eBayes(fit.cont)
-  result<-topTable(efit, n=nrow(efit))
+  result<-topTable(efit, number=nrow(efit))
   DEGs <- result
   DEGs[, 'id'] <- rownames(DEGs)
   return(DEGs)

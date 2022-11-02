@@ -29,6 +29,18 @@ ctrl + shift + e => Checking
 
 ctrl + shift + t => test
 
+rm(list=ls());gc()
+
+search()
+
+detach(package:sysbioR)
+
+library(sysbioR)
+
+devtools::install_github(“SysbioCHA/sysbioR”)
+
+ck = sysbioR::LimmaDEG(limmaDf, “KO_24”, “KO_0”)
+
 ## Installation
 
 You can install the development version of sysbioR from
@@ -45,7 +57,7 @@ This is a basic example which shows you how to solve a common problem:
 
 ``` r
 library(sysbioR)
-## basic example code
+basic example code
 ```
 
 What is special about using `README.Rmd` instead of just `README.md`?
